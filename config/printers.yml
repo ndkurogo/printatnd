@@ -1,5 +1,4 @@
 ---
-Res_Hall_4510_PCL:
-  :queue: Xerox4510_pcl-alternative
-  :driver: Xerox Phaser 4510DT
+'Res Hall 4510 PCL':
+  :id: 'Res_Hall_4510_PCL'
   :double_sided: true
