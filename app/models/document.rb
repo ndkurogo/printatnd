@@ -51,9 +51,6 @@ class Document < ActiveRecord::Base
   
   def enqueue
     options = {
-      "HPOption_Duplexer" => "True",
-      "InstalledMemory" => "128-255MB",
-      "HPOption_2000_Sheet_Tray" => "True"
     }
 
     options.merge!("Collate" => "True") if print.collate
