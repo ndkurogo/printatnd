@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904190048) do
+ActiveRecord::Schema.define(:version => 20131013031117) do
 
   create_table "documents", :force => true do |t|
     t.integer  "print_id"
@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(:version => 20130904190048) do
   end
 
   create_table "prints", :force => true do |t|
-    t.string   "building"
     t.string   "printer"
-    t.string   "user"
+    t.string   "netid"
     t.boolean  "double_sided", :default => true
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false

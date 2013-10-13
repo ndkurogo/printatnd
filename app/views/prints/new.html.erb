@@ -1,9 +1,9 @@
 <div class="container">
 
-<% if flash[:printer] && flash[:user] %>
+<% if flash[:printer] && flash[:netid] %>
   <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <%= t("success.html", :count => flash[:count], :printer => flash[:printer], :user => flash[:user]) %>
+    <%= t("success.html", :count => flash[:count], :printer => flash[:printer], :netid => flash[:netid]) %>
   </div>
 <% elsif @print.errors.any? %>
   <div class="alert alert-danger alert-dismissable">
@@ -23,6 +23,8 @@
   <div class="choose-destination col-sm-3 col-lg-3">
     <div class="row">
       <div class="col-lg-12">
+        <h5>NetID</h5>
+        <%= f.text_field :netid %>
       </div>
     </div>
     <br>

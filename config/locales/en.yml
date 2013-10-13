@@ -15,6 +15,7 @@ en:
     success:
         html:
             one:
-                "Your document has been successfully sent to <strong>%{printer}</strong> under the pseudonym \"<strong>%{user}</strong>\"."
+                "Your document has been successfully sent to <strong>%{printer}</strong> with the NetID \"<strong>%{netid}</strong>\"."
             other:
-                "Your documents have been successfully sent to <strong>%{printer}</strong> under the pseudonym \"<strong>%{user}</strong>\"."
+                "Your documents have been successfully sent to <strong>%{printer}</strong> with the NetID \"<strong>%{netid}</strong>\"."
+

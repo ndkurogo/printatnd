@@ -9,7 +9,6 @@ class PrintsController < ApplicationController
   def create    
     @print = Print.new(params[:print])
     @print.ip = get_ip
-    @print.user = get_user
 
     @print.build_documents(params[:urls])
 
@@ -39,16 +38,12 @@ class PrintsController < ApplicationController
     params[:print][:copies] = 1 if params[:print][:copies].blank?
   end
 
-  def get_user
-    $redis.rpoplpush("users", "users") || "Malkovich"
-  end
-
   def get_ip
     request.headers["X-Real-IP"] if Rails.env.production?
   end
 
   def set_flash(print)
-    flash[:user]     = print.user
+    flash[:netid]    = print.netid
     flash[:printer]  = print.printer
     flash[:count]    = print.documents.size
   end
