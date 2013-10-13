@@ -50,7 +50,6 @@ class PrintsController < ApplicationController
   def set_flash(print)
     flash[:user]     = print.user
     flash[:printer]  = print.printer
-    flash[:building] = print.building
     flash[:count]    = print.documents.size
   end
 
@@ -60,7 +59,7 @@ class PrintsController < ApplicationController
       request.host.split(".")[-2..-1].join(".")
     end
       
-    [:printer, :building].each do |x|
+    [:printer].each do |x|
       cookies.permanent[x] = {value: print.send(x), secure: secure, domain: domain}
     end
   end

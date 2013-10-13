@@ -4,7 +4,6 @@
 
 $(document).ready ->
   printer = $("#print_printer")
-  building = $("#print_building")
 
   format = (selection) ->
     status = gon.status[selection.id]
@@ -17,16 +16,11 @@ $(document).ready ->
     formatSelection: format
     minimumResultsForSearch: NaN
 
-  building.select2
-    width: "off"
-
   change_printers = (slug) ->
     printer.empty()
     printer.append($("<option></option>").attr("value", p).text(p)) for p in gon.printers[slug]
     printer.select2("val", gon.printers[slug][0])
         
-  building.change (event) -> change_printers(event.val)
-
   event_type = if $(".alert-success").length > 0
     'Print Success'
   else if $(".alert-danger").length > 0
