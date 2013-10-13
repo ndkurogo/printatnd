@@ -58,9 +58,9 @@ class Document < ActiveRecord::Base
 
     options_array = options.map { |k,v| v ? ["-o", "#{k}=#{v}"] : ["-o", "#{k}"] }.flatten
 
-    command = ["lp", "-c", "-E", "-t", self.filename.to_s, "-d", print.printer.to_s, "-U", print.user.to_s, "-n", print.copies.to_s].concat(options_array) << "--" << self.tempfile.path
+    command = ["lp", "-c", "-E", "-t", self.filename.to_s.shellescape, "-d", $printernames[print.printer.to_s].to_s.shellescape, "-U", print.netid.to_s.shellescape, "-n", print.copies.to_s.shellescape].concat(options_array) << "--" << self.tempfile.path.shellescape
 
-    IO.popen(command) do |f|
+    IO.popen(command.join(" ")) do |f|
       logger.info command.join(" ")
       logger.info f.gets
     end
