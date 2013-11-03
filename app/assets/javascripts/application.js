@@ -10,7 +10,7 @@
 //= require select2
 //= require twitter/bootstrap
 //= require_tree .
-
+/*
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-27107623-1']);
 _gaq.push(['_setDomainName', 'printatcu.com']);
@@ -37,3 +37,5 @@ var _gauges = _gauges || [];
 typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
 b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 mixpanel.init("0f9b5bfa406a8a3233ce34856ed9e330");
+*/
+

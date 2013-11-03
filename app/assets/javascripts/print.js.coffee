@@ -28,7 +28,7 @@ $(document).ready ->
   else
     'Page View'
 
-  mixpanel.track(event_type)
+  #mixpanel.track(event_type)
 
   # if !defaults && (p = $.cookie("printer")) && (b = $.cookie("building"))
   #   building.select2("val", b)
