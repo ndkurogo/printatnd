@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/saarons/shinobi.git
-  revision: 83a8fce0e0b535bc76f248fa5f894c8c5e73d84e
-  specs:
-    shinobi (0.2.0)
-      cups
-      multi_json
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -194,7 +186,6 @@ DEPENDENCIES
   resque
   resque-scheduler
   sass-rails (~> 3.2.3)
-  shinobi!
   thin
   uglifier (>= 1.0.3)
   unicorn
