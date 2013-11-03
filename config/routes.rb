@@ -1,4 +1,4 @@
-Printatcu::Application.routes.tap do |routes|
+Printatnd::Application.routes.tap do |routes|
   routes.default_scope = {format: false}
 
   routes.draw do

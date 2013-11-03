@@ -4,7 +4,7 @@ require "mina/git"
 require "mina/rvm"
 
 set :domain, "printatcu"
-set :deploy_to, "/var/www/printatcu"
+set :deploy_to, "/var/www/printatnd"
 #set :repository, "git://github.com/saarons/printatcu.git"
 #set :branch, "master"
 

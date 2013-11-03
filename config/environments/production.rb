@@ -1,4 +1,4 @@
-Printatcu::Application.configure do
+Printatnd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -7,7 +7,7 @@ Printatcu::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_dispatch.rack_cache        = {metastore: "memcached://localhost:11211/printatcu/meta", entitystore: "memcached://localhost:11211/printatcu/body", verbose: true}
+  config.action_dispatch.rack_cache        = {metastore: "memcached://localhost:11211/printatnd/meta", entitystore: "memcached://localhost:11211/printatnd/body", verbose: true}
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false

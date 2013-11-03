@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Printatcu::Application.load_tasks
+Printatnd::Application.load_tasks
