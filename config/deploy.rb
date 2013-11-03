@@ -5,8 +5,8 @@ require "mina/rvm"
 
 set :domain, "printatcu"
 set :deploy_to, "/var/www/printatcu"
-set :repository, "git://github.com/saarons/printatcu.git"
-set :branch, "master"
+#set :repository, "git://github.com/saarons/printatcu.git"
+#set :branch, "master"
 
 set :shared_paths, ["config/database.yml", "log", "public/uploads", "tmp/pids", "tmp/sockets"]
 
