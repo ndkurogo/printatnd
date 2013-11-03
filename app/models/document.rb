@@ -68,8 +68,8 @@ class Document < ActiveRecord::Base
   
   def announce
     if Rails.env.production?
-      json = ActiveSupport::JSON.encode({})
-      Pusher["printatnd"].trigger("print", json)
+      #json = ActiveSupport::JSON.encode({})
+      #Pusher["printatnd"].trigger("print", json)
     end
   end
 
