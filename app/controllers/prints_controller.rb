@@ -54,9 +54,7 @@ class PrintsController < ApplicationController
       request.host
     end
       
-    [:printer].each do |x|
-      cookies.permanent[x] = {value: print.send(x), secure: secure, domain: domain}
-    end
+    cookies.permanent[:netid] = {value: print.netid, secure: secure, domain: domain}
   end
   
   def cache_new

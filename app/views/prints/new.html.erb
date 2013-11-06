@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-lg-12">
         <h5>NetID</h5>
-        <%= f.text_field(:netid,:class => "form-control") %>
+        <%= f.text_field(:netid, :value => cookies[:netid], :class => "form-control") %>
       </div>
     </div>
   </div>
