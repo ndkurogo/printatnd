@@ -50,5 +50,8 @@ module Printatnd
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = "2013-09-05T00:26:35Z"
+
+    # Due to CAS, we always have to use SSL
+    config.force_ssl = true
   end
 end

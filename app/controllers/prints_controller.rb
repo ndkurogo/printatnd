@@ -1,4 +1,5 @@
 class PrintsController < ApplicationController
+  before_filter CASClient::Frameworks::Rails::Filter
   before_filter :cache_new, :only => :new
   before_filter :sanitize_input, :only => :create
   
