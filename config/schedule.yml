@@ -1,4 +1,0 @@
-update_statuses:
-  every: 5m
-  queue: maintenance
-  class: UpdateStatusesWorker
