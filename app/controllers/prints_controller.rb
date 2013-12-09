@@ -1,13 +1,17 @@
 class PrintsController < ApplicationController
-  before_filter CASClient::Frameworks::Rails::Filter
+  before_filter :cas_auth
   before_filter :cache_new, :only => :new
   before_filter :sanitize_input, :only => :create
-  
+
+  def index
+    redirect_to root_path
+  end
+
   def new
     @print = Print.new
   end
-  
-  def create    
+
+  def create
     @print = Print.new(params[:print])
     @print.ip = get_ip
 
@@ -19,15 +23,25 @@ class PrintsController < ApplicationController
 
         set_flash(@print)
         set_cookies(@print)
-        
+
         format.html { redirect_to root_path(success: success) }
       else
         format.html { render action: "new" }
       end
     end
   end
-  
+
+  protected
+
+  def cas_auth
+    if session[:cas_user].blank?
+      CASClient::Frameworks::Rails::Filter.filter(self)
+      cookies[:netid] = session[:cas_user]
+    end
+  end
+
   private
+
   def sanitize_input
     params[:urls] = if params[:urls].blank?
       []
@@ -54,7 +68,7 @@ class PrintsController < ApplicationController
     domain = if Rails.env.production?
       request.host
     end
-      
+
     cookies.permanent[:netid] = {value: print.netid, secure: secure, domain: domain}
   end
   

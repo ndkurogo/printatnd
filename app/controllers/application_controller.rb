@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_filter CASClient::Frameworks::Rails::Filter
   before_filter :set_globals
 
   def set_globals
