@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014201525) do
+ActiveRecord::Schema.define(:version => 20131209224310) do
 
   create_table "documents", :force => true do |t|
     t.integer  "print_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20131014201525) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "url"
+    t.string   "ga_cid"
   end
 
   create_table "prints", :force => true do |t|

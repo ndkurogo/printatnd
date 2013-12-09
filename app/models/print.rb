@@ -11,10 +11,11 @@ class Print < ActiveRecord::Base
     end
   end
 
-  def build_documents(urls)
+  def build_documents(urls, ga_cid)
     urls.each do |url|
       new_document = documents.build
       new_document.url = url
+      new_document.ga_cid = ga_cid
     end
   end
 end

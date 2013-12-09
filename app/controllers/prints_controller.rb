@@ -15,7 +15,7 @@ class PrintsController < ApplicationController
     @print = Print.new(params[:print])
     @print.ip = get_ip
 
-    @print.build_documents(params[:urls])
+    @print.build_documents(params[:urls], params[:ga_client_id])
 
     respond_to do |format|
       if success = @print.save
