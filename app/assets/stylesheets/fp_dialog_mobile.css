@@ -18,7 +18,6 @@ p#notify.error {
 p#notify.error:active, p#notify.error:hover {
 	transition-delay: 0s;
 	transition-duration: 0.1s;
-	transition-timing-function: cubic-bezier(0,1,0,1);
 
 	opacity: 0;
 }
