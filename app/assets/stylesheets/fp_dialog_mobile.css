@@ -1,0 +1,39 @@
+#notify-container {
+	position: relative !important;
+
+	margin: auto !important;
+
+	left: auto !important;
+	max-width: 90% !important;
+}
+
+p#notify.error {
+	transition-delay: 999999999s;
+
+	display: inherit !important;
+
+	font-size: 0;
+}
+
+p#notify.error:active, p#notify.error:hover {
+	transition-delay: 0s;
+	transition-duration: 0.1s;
+	transition-timing-function: cubic-bezier(0,1,0,1);
+
+	opacity: 0;
+}
+
+p#notify.error:before {
+	content: "(Tap to close.)";
+
+	font-size: 10px;
+}
+
+p#notify.error:after {
+	content: "\a Sorry, this file format is not supported. This service supports the following file types: .ai .doc .docx .dxf .eps .ods .odt .pages .pdf .ppt .pptx .ps .psd .rtf .svg .tiff .txt .xls .xlsx";
+
+	font-size: 14px;
+	line-height: 14px;
+	white-space: pre-line;
+}
+

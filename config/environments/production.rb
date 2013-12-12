@@ -45,7 +45,8 @@ Printatnd::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( fp_dialog_desktop.css )
+  config.assets.precompile += %w( fp_dialog_mobile.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -62,3 +63,4 @@ Printatnd::Application.configure do
   
   config.action_dispatch.always_write_cookie = true
 end
+
