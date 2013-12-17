@@ -3,12 +3,13 @@ p#notify.error {
 
 	display: inherit !important;
 
+	color: rgba(165,63,63,0);
 	font-size: 0;
 }
 
 p#notify.error:active {
 	transition-delay: 0s;
-	transition-duration: 0.1s;
+	transition-duration: 0.01s;
 
 	opacity: 0;
 }
@@ -16,12 +17,14 @@ p#notify.error:active {
 p#notify.error:before {
 	content: "(Click to close.)";
 
+	color: white;
 	font-size: 10px;
 }
 
 p#notify.error:after {
-	content: "\a Sorry, this file format is not supported. This service supports the following file types:\a .ai\a .doc\a .docx\a .dxf\a .eps\a .ods\a .odt\a .pages\a .pdf\a .ppt\a .pptx\a .ps\a .psd\a .rtf\a .svg\a .tiff\a .txt\a .xls\a .xlsx";
+	content: "\a Sorry, this file format is not supported. This service supports the following file types:\a\a .ai .doc .docx .dxf .eps .ods .odt .pages .pdf .ppt .pptx .ps .psd .rtf .svg .tiff .txt .xls .xlsx";
 
+	color: white;
 	font-size: 14px;
 	line-height: 14px;
 	white-space: pre-line;

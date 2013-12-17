@@ -43,3 +43,34 @@ footer > .container {
 .navbar-static-top {
   margin-bottom: 19px;
 }
+
+/* An unnecessarily (ha!) elaborate label style */
+.navbar-sticker {
+  -moz-transform: translate(55px, 10px) rotate(-30deg);
+  -ms-transform: translate(55px, 10px) rotate(-30deg);
+  -webkit-transform: translate(55px, 10px) rotate(-30deg);
+  transform: translate(55px, 10px) rotate(-30deg);
+
+  display: block;
+  background: -webkit-linear-gradient(to bottom right, red, firebrick);
+  background: linear-gradient(to bottom right, red, firebrick);
+
+  position: fixed;
+  width: 70px;
+  height: 70px;
+
+  box-shadow: 0 0 5px black;
+  box-sizing: border-box;
+  border-radius: 100%;
+  padding-top: 26px;
+
+  color: white;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-shadow: 0 0 9px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+
+  z-index: -1;
+}
+
