@@ -74,3 +74,34 @@ footer > .container {
   z-index: -1;
 }
 
+/* Move the print button to the bottom on small screens */
+@media(max-width: 767px) { /* Bootstrap definition of small screen */
+	#print-options {
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: flex;
+
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+
+		-moz-align-items: stretch;
+		-ms-align-items: stretch;
+		-webkit-align-items: stretch;
+		align-items: stretch;
+	}
+
+	#print-options > .input-group {
+		margin-bottom: 10px;
+	}
+
+	#print-options > [type="submit"] {
+		-moz-order: 99;
+		-ms-order: 99;
+		-webkit-order: 99;
+		order: 99;
+	}
+}
+
