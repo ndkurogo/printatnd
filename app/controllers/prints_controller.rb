@@ -34,9 +34,18 @@ class PrintsController < ApplicationController
   protected
 
   def cas_auth
-    if session[:cas_user].blank?
+    if !cookies.signed[:cas_authed] or cookies[:netid].blank?
       CASClient::Frameworks::Rails::Filter.filter(self)
-      cookies[:netid] = session[:cas_user]
+
+      cookies.signed[:cas_authed] = {
+        :value => true,
+        :expires => 1.month.from_now
+      }
+
+      cookies[:netid] = {
+        :value => session[:cas_user],
+        :expires => 1.month.from_now
+      }
     end
   end
 
@@ -69,7 +78,7 @@ class PrintsController < ApplicationController
       request.host
     end
 
-    cookies.permanent[:netid] = {value: print.netid, secure: secure, domain: domain}
+    cookies[:netid] = {value: print.netid, secure: secure, domain: domain}
   end
   
   def cache_new
