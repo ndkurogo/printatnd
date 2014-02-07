@@ -46,7 +46,9 @@ defined directly in a VirtualHost directive, e.g.:
 However, the Resque workers (which process the print jobs in the background)
 will not be automatically started this way, so they must be started separately:
 
-    $ FILEPICKER_SECRET=ABCDEFGHIJKLMNOPQRSTUVWXYZ script/resque start
+    $ export FILEPICKER_SECRET=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    $ export RAILS_ENV=production
+    $ script/resque start
   
 Credits
 -------
