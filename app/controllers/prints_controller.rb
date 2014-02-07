@@ -68,7 +68,7 @@ class PrintsController < ApplicationController
 
   def set_flash(print)
     flash[:netid]    = print.netid
-    flash[:printer]  = print.color ? "All Color" : "All BW"
+    flash[:printer]  = print.color ? "color" : "black and white"
     flash[:count]    = print.documents.size
   end
 

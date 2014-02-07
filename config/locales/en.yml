@@ -11,12 +11,12 @@ en:
                 copies: "Number Of Copies:"
                 double_sided: "Double-sided?"
     meta_description: "Print@ND is a service that allows University of Notre Dame students to print to any printer on campus."
-    something_bad_happened: "Something Bad Happened"
+    something_bad_happened: "Error"
     title: "Print@ND"
     success:
         html:
             one:
-                "Your document has been successfully sent to <strong>%{printer}</strong> with the NetID \"<strong>%{netid}</strong>\"."
+                "Your document has been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\"."
             other:
-                "Your documents have been successfully sent to <strong>%{printer}</strong> with the NetID \"<strong>%{netid}</strong>\"."
+                "Your documents have been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\"."
 
