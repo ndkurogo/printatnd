@@ -18,7 +18,13 @@ class PrintsController < ApplicationController
     @print.build_documents(params[:urls], params[:ga_client_id])
 
     respond_to do |format|
-      if success = @print.save
+      if not ["ND-Pharos-All-BW", "ND-Pharos-All-Color"].all? { |printer|
+        system("lpstat -a #{printer} | grep accepting")
+      }
+        flash[:noprinter] = true
+
+        format.html { redirect_to root_path(success: false) }
+      elsif success = @print.save
         @print.enqueue
 
         set_flash(@print)
