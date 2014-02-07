@@ -17,4 +17,4 @@ class Filepicker
   end
 end
 
-$filepicker = Filepicker.new("AZ3aRxrjfSgOsYJxaz4Jnz", ENV["FILEPICKER_SECRET"])
+$filepicker = Filepicker.new("AW9qHlqNJSQKUr314gRp1z", ENV["FILEPICKER_SECRET"])
