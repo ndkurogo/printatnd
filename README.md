@@ -54,7 +54,7 @@ Credits
 -------
 * [Sam Aarons](http://samaarons.com) -- Wrote original Print@CU system for
   Columbia University's NINJa printing system
-* Kevin Riehm -- Modified Print@CU to work with Notre Dame's printing system
+* [Kevin Riehm](http://kevinriehm.com) -- Modified Print@CU to work with Notre Dame's printing system
   
 External Links
 --------------
