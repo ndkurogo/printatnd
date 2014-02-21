@@ -18,7 +18,7 @@ class Document < ActiveRecord::Base
 
   def needs_conversion?
     DIRECT_EXTENSIONS.none? do |extension|
-      self.filename.end_with?(extension)
+      self.filename.downcase.end_with?(extension)
     end
   end
   
@@ -55,6 +55,8 @@ class Document < ActiveRecord::Base
     }
 
     options.merge!("sides" => "two-sided-long-edge") if print.double_sided
+
+    options.merge!("fit-to-page" => false) if [".jpg", ".jpeg", ".png"].include? File.extname(self.filename).downcase
 
     options_array = options.map { |k,v| v ? ["-o", "#{k}=#{v}"] : ["-o", "#{k}"] }.flatten
 
