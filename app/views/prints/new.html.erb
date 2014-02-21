@@ -19,6 +19,12 @@
   </div>
 <% end %>
 
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <p>This is a <b>beta service</b>. Issues with prints <b>will still</b> be deducted from your printing quota.</p>
+  <p>Please contact the OIT Help Desk at <a href="tel:+1-574-631-8111">(574) 631-8111</a> or <a href="mailto:oithelp@nd.edu">oithelp@nd.edu</a> with any questions regarding this service.</p>
+</div>
+
 <%= form_for @print do |f| %>
 
 <div id="area" class="row">
