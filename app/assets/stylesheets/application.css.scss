@@ -1,78 +1,8 @@
-$navbar-default-bg: #75B2DD;
-$navbar-default-brand-color: #FFF;
-$navbar-default-brand-hover-color: #FFF;
-
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
 @import "twitter/bootstrap";
 @import "select2";
 @import "print";
-
-html,
-body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
-}
-
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by its height */
-  margin: 0 auto -60px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
-}
-
-/* Set the fixed height of the footer here */
-footer {
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-.container .credit {
-  margin: 20px 0;
-}
-
-footer > .container {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.navbar-static-top {
-  margin-bottom: 19px;
-}
-
-/* An unnecessarily (ha!) elaborate label style */
-.navbar-sticker {
-  -moz-transform: translate(55px, 10px) rotate(-30deg);
-  -ms-transform: translate(55px, 10px) rotate(-30deg);
-  -webkit-transform: translate(55px, 10px) rotate(-30deg);
-  transform: translate(55px, 10px) rotate(-30deg);
-
-  display: block;
-  background: -webkit-linear-gradient(to bottom right, red, firebrick);
-  background: linear-gradient(to bottom right, red, firebrick);
-
-  position: absolute;
-  width: 70px;
-  height: 70px;
-
-  box-shadow: 0 0 5px black;
-  box-sizing: border-box;
-  border-radius: 100%;
-  padding-top: 26px;
-
-  color: white;
-  font-size: 18px;
-  line-height: 18px;
-  text-align: center;
-  text-shadow: 0 0 9px rgba(0,0,0,0.5);
-  text-transform: uppercase;
-
-  z-index: -1;
-}
 
 /* Move the print button to the bottom on small screens */
 @media(max-width: 767px) { /* Bootstrap definition of small screen */
@@ -103,5 +33,145 @@ footer > .container {
 		-webkit-order: 99;
 		order: 99;
 	}
+}
+
+/* Notre Dame style overrides */
+
+@media screen, projection {
+	body {
+		background: #fff url(ndt-bg-blue-gold.png) 0 0 repeat-x;
+
+		margin: auto;
+
+		max-width: 960px;
+	}
+
+	header {
+		height: 150px;
+
+		font-family: Georgia, Times, "Times New Roman", serif;
+	}
+
+	header h3.nddotedu {
+		background: url(und.png) left center no-repeat;
+
+		margin: 0;
+
+		font-family: inherit;
+	}
+
+	header h3.nddotedu a {
+		display: block;
+		height: 50px;
+
+		font-family: inherit;
+		text-decoration: none;
+		text-indent: -9999px; // Hide the text
+	}
+
+	header h1 {
+		margin-top: 30px;
+
+		font-family: inherit;
+		font-size: 280%;
+	}
+
+	header h1 a {
+		color: #002b5c;
+		font-family: inherit;
+		text-decoration: none;
+		text-shadow: 0 1px 0 #fff;
+	}
+
+	header h1 a:hover {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	#new_print {
+		margin: 30px 0;
+	}
+
+	#new_print .btn {
+		background: -ms-linear-gradient(top,#0d407b,#083970);
+		background: -moz-linear-gradient(top,#0d407b,#083970);
+		background: -o-linear-gradient(top,#0d407b,#083970);
+		background: -webkit-linear-gradient(top,#0d407b,#083970);
+		background: linear-gradient(top,#0d407b,#083970);
+
+		border: 1px solid #022854;
+	}
+
+	footer {
+		border-top: 1px solid #dadada;
+		padding: 30px 0 40px;
+
+		position: relative;
+	}
+
+	footer a#ndmark {
+		display: block;
+		width: 150px;
+
+		position: absolute;
+		top: 35px;
+		right: 0;
+	}
+
+	footer a#ndmark img {
+		max-width: 100%;
+	}
+}
+
+/* Adjustments for small screens */
+@media(max-width: 767px) {
+	header {
+		text-align: center;
+	}
+
+	header h3.nddotedu {
+		background-position: center center;
+	}
+
+	header h1 {
+		margin-top: 26px;
+	}
+
+	header h1 a {
+		font-size: 32px;
+	}
+
+	.alert {
+		text-align: center;
+	}
+
+	#new_print {
+		margin: 5px 15px 15px;
+	}
+
+	footer {
+		padding: 0 15px;
+
+		text-align: center;
+	}
+
+	footer a#ndmark {
+		margin: 20px auto 15px;
+
+		position: static;
+	}
+}
+
+/* Text selection */
+::selection {
+	background: #369 !important;
+
+	color: #fff !important;
+	text-shadow: none !important;
+}
+
+/* Alert boxes */
+.alert {
+	margin: 15px 15px 0;
 }
 
