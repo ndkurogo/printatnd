@@ -42,6 +42,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 		background: #fff url(ndt-bg-blue-gold.png) 0 0 repeat-x;
 
 		margin: auto;
+		padding: 0 15px;
 
 		max-width: 960px;
 	}
@@ -125,6 +126,10 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 /* Adjustments for small screens */
 @media(max-width: 767px) {
+	body {
+		padding: 0;
+	}
+
 	header {
 		text-align: center;
 	}
