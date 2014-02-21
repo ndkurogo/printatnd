@@ -4,6 +4,11 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 @import "select2";
 @import "print";
 
+/* Fiddle with the radio buttons */
+#print-options .radio {
+	margin-top: 10px;
+}
+
 /* Move the print button to the bottom on small screens */
 @media(max-width: 767px) { /* Bootstrap definition of small screen */
 	#print-options {
@@ -12,15 +17,24 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 		display: -webkit-flex;
 		display: flex;
 
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-webkit-flex-direction: column;
-		flex-direction: column;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
 
-		-moz-align-items: stretch;
-		-ms-align-items: stretch;
-		-webkit-align-items: stretch;
-		align-items: stretch;
+	#print-options > * {
+		-moz-flex: 1 100%;
+		-ms-flex: 1 100%;
+		-webkit-flex: 1 100%;
+		flex: 1 100%;
+	}
+
+	#print-options > .radio-inline {
+		-moz-flex: 1 auto;
+		-ms-flex: 1 auto;
+		-webkit-flex: 1 auto;
+		flex: 1 auto;
 	}
 
 	#print-options > .input-group {

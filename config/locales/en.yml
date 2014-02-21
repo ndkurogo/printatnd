@@ -7,8 +7,9 @@ en:
             print:
                 printer: "Printer"
                 building: "Building"
-                collate: "Collated?"
                 copies: "Number Of Copies:"
+                bw: "Black and white"
+                color: "Color"
                 double_sided: "Double-sided?"
     meta_description: "Print@ND is a service that allows University of Notre Dame students to print to any printer on campus."
     something_bad_happened: "Error"
