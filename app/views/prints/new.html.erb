@@ -41,12 +41,6 @@
   <div class="col-sm-1 col-lg-1"><br><span class="hidden-xs divider">&raquo;<br><br></span></div>
   <div class="col-sm-3 col-lg-3" id="print-options">
     <%= f.submit(:class => "btn btn-success btn-lg btn-block") %>
-    <div class="checkbox">
-      <%= f.label(:collate) do %>
-        <%= f.check_box :collate %>
-        <%= t("helpers.label.print.collate") %>
-      <% end %>
-    </div>
 
     <div class="checkbox">
       <%= f.label(:color) do %>

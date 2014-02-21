@@ -51,9 +51,9 @@ class Document < ActiveRecord::Base
   
   def enqueue
     options = {
+      "Collate" => "True"
     }
 
-    options.merge!("Collate" => "True") if print.collate
     options.merge!("sides" => "two-sided-long-edge") if print.double_sided
 
     options_array = options.map { |k,v| v ? ["-o", "#{k}=#{v}"] : ["-o", "#{k}"] }.flatten
