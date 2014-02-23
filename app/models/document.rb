@@ -56,7 +56,18 @@ class Document < ActiveRecord::Base
 
     options.merge!("sides" => "two-sided-long-edge") if print.double_sided
 
-    options.merge!("fit-to-page" => false) if [".jpg", ".jpeg", ".png"].include? File.extname(self.filename).downcase
+    # Image-specific options
+    if IMAGE_EXTENSIONS.include? File.extname(self.filename).downcase
+      image = Magick::Image::read(self.tempfile.path).first
+
+      # No less than 96ppi, no greater than one page
+      dimensions = [image.rows, image.columns]
+      if [dimensions.max/10.0, dimensions.min/7.5].max < 96
+        options.merge!("ppi" => "96")
+      else
+        options.merge!("fit-to-page" => false)
+      end
+    end
 
     options_array = options.map { |k,v| v ? ["-o", "#{k}=#{v}"] : ["-o", "#{k}"] }.flatten
 

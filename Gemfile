@@ -16,6 +16,7 @@ gem "jquery-rails"
 gem "rubycas-client"
 gem "rails", "3.2.13"
 gem "bootstrap-sass-rails"
+gem "rmagick", :require => "RMagick"
 gem "daemon-spawn", :require => "daemon_spawn"
 gem "resque", :require => ["resque", "resque/server"]
 gem "resque-scheduler", :require => ["resque_scheduler", "resque_scheduler/server"]
