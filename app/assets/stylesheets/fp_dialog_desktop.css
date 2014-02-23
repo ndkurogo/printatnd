@@ -22,7 +22,7 @@ p#notify.error:before {
 }
 
 p#notify.error:after {
-	content: "\a Sorry, this file format is not supported. This service supports the following file types:\a\a .ai .doc .docx .dxf .eps .jpg .ods .odt .pages .pdf .png .ppt .pptx .ps .psd .rtf .svg .tiff .txt .xls .xlsx";
+	content: "\a Sorry, this file format is not supported. This service supports the following file types:\a\a .ai .doc .docx .dxf .eps .gif .jpg .ods .odt .pages .pdf .png .ppt .pptx .ps .psd .rtf .svg .tiff .txt .xls .xlsx";
 
 	color: white;
 	font-size: 14px;
