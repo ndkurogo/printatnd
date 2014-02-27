@@ -17,7 +17,7 @@ en:
     success:
         html:
             one:
-                "Your document has been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\"."
+                "Your document has been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\". Please note that large files will take longer to appear at release stations."
             other:
-                "Your documents have been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\"."
+                "Your documents have been successfully sent to all <strong>%{printer}</strong> printer queues with the NetID \"<strong>%{netid}</strong>\". Please note that large files will take longer to appear at release stations."
 
