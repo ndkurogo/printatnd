@@ -8,6 +8,7 @@ class Document < ActiveRecord::Base
     response = Excon.get(self.url, query: {policy: policy, signature: signature})
 
     self.filename = response.headers["X-File-Name"] || "Untitled"
+    self.filename.gsub!(/[^a-zA-Z0-9._-]/,'_') # Safe-ify the file name
 
     self.tempfile = Tempfile.new(self.filename, encoding: 'ascii-8bit')
     self.tempfile.write(response.body)
@@ -18,7 +19,7 @@ class Document < ActiveRecord::Base
 
   def needs_conversion?
     DIRECT_EXTENSIONS.none? do |extension|
-      self.filename.downcase.end_with?(extension)
+      self.filename and self.filename.downcase.end_with?(extension)
     end
   end
   
@@ -57,7 +58,7 @@ class Document < ActiveRecord::Base
     options.merge!("sides" => "two-sided-long-edge") if print.double_sided
 
     # Image-specific options
-    if IMAGE_EXTENSIONS.include? File.extname(self.filename).downcase
+    if File.extname(self.filename) and IMAGE_EXTENSIONS.include? File.extname(self.filename).downcase
       image = Magick::Image::read(self.tempfile.path).first
 
       # No less than 96ppi, no greater than one page
