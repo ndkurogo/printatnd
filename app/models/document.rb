@@ -35,16 +35,33 @@ class Document < ActiveRecord::Base
       pdf_url = ExecJS.eval(gp_url)
       cookie_jar = Tempfile.new("cookie_jar")
 
-      command = ["curl", "-s", "-L", "-c", cookie_jar.path, "-o", self.tempfile.path, pdf_url]
+      command = ["curl", "-f", "-s", "-L", "-c", cookie_jar.path, "-o", self.tempfile.path, pdf_url]
 
       begin
         IO.popen(command) do |f|
           logger.info command.join(" ")
           logger.info f.gets
         end
+        status = $?.to_i == 0
       ensure
         cookie_jar.close!
       end
+    end
+
+    # Use the backup local converter if Google failed us
+    if !status
+      command = ["soffice", "-env:UserInstallation=file:///tmp/libreoffice_conversion", "--headless", "--convert-to", "pdf", "--outdir", File.dirname(self.tempfile.path), self.tempfile.path]
+
+      IO.popen(command) do |f|
+        logger.info command.join(" ")
+        logger.info f.gets
+      end
+      status = $?.to_i == 0
+
+      logger.info File.join(File.dirname(self.tempfile.path), File.basename(self.tempfile.path,".*") + ".pdf")
+      newtempfile = File.open File.join(File.dirname(self.tempfile.path), File.basename(self.tempfile.path,".*") + ".pdf")
+      self.tempfile.unlink
+      self.tempfile = newtempfile
     end
 
     return status
@@ -88,7 +105,7 @@ class Document < ActiveRecord::Base
   end
 
   def cleanup
-    self.tempfile.unlink
+    File.delete(self.tempfile.path)
 
     policy = $filepicker.policy('remove')
     signature = $filepicker.sign(policy)
