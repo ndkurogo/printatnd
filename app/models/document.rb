@@ -58,7 +58,6 @@ class Document < ActiveRecord::Base
       end
       status = $?.to_i == 0
 
-      logger.info File.join(File.dirname(self.tempfile.path), File.basename(self.tempfile.path,".*") + ".pdf")
       newtempfile = File.open File.join(File.dirname(self.tempfile.path), File.basename(self.tempfile.path,".*") + ".pdf")
       self.tempfile.unlink
       self.tempfile = newtempfile
