@@ -1,24 +1,6 @@
 p#notify.error {
-	transition-delay: 999999999s;
-
-	display: inherit !important;
-
 	color: rgba(165,63,63,0);
 	font-size: 0;
-}
-
-p#notify.error:active {
-	transition-delay: 0s;
-	transition-duration: 0.01s;
-
-	opacity: 0;
-}
-
-p#notify.error:before {
-	content: "(Click to close.)";
-
-	color: white;
-	font-size: 10px;
 }
 
 p#notify.error:after {
