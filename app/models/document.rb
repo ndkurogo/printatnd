@@ -77,6 +77,13 @@ class Document < ActiveRecord::Base
     if File.extname(self.filename) and IMAGE_EXTENSIONS.include? File.extname(self.filename).downcase
       image = Magick::Image::read(self.tempfile.path).first
 
+      # Stop-gap measure to work with JPEGs
+      if %w(.jpg .jpeg).include? File.extname(self.filename).downcase
+        logger.info "converting a JPEG file to PNG as a stop-gap measure"
+        image.format = "PNG"
+        image.write(self.tempfile.path)
+      end
+
       # No less than 96ppi, no greater than one page
       dimensions = [image.rows, image.columns]
       if [dimensions.max/10.0, dimensions.min/7.5].max < 96
