@@ -1,4 +1,4 @@
-IMAGE_EXTENSIONS = %w(.gif .png)
+IMAGE_EXTENSIONS = %w(.gif .jpg .jpeg .png)
 DIRECT_EXTENSIONS = %w(.pdf .eps .ps .txt) + IMAGE_EXTENSIONS
 GOOGLE_EXTENSIONS = %w(.odt .ods .doc .docx .xls .xlsx .ppt .pptx .ai .psd .tiff .svg .rtf)
 

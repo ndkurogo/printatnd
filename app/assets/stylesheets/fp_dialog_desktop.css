@@ -4,7 +4,7 @@ p#notify.error {
 }
 
 p#notify.error:after {
-	content: "\a Sorry, this file is not supported. All files must be less than 10MB in size. This service supports the following file types:\a\a .ai, .doc, .docx, .eps, .gif, .ods, .odt, .pdf, .png, .ppt, .pptx, .ps, .psd, .rtf, .svg, .tiff, .txt, .xls, and .xlsx";
+	content: "\a Sorry, this file is not supported. All files must be less than 10MB in size. This service supports the following file types:\a\a .ai, .doc, .docx, .eps, .gif, .jpg, .ods, .odt, .pdf, .png, .ppt, .pptx, .ps, .psd, .rtf, .svg, .tiff, .txt, .xls, and .xlsx";
 
 	color: white;
 	font-size: 14px;
