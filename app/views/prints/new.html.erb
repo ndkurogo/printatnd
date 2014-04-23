@@ -42,7 +42,7 @@
       policy = $filepicker.policy('pick')
       signature = $filepicker.sign(policy)
     %>
-    <input id="filepicker" name="urls" data-fp-policy="<%= policy %>" data-fp-signature="<%= signature %>" data-fp-apikey="<%= $filepicker.api_key %>" type="filepicker-dragdrop" data-fp-multiple="true" data-fp-services="COMPUTER,GOOGLE_DRIVE,DROPBOX,BOX,SKYDRIVE,PICASA,FLICKR,URL,GITHUB,GMAIL,ALFRESCO,FTP,WEBDAV" data-fp-drag-class="col-xs-12 printatnd-dragdrop" data-fp-extensions="<%= ALL_EXTENSIONS.join(",") %>" data-fp-button-class="btn btn-primary btn-block btn-lg"/>
+    <input id="filepicker" name="urls" data-fp-policy="<%= policy %>" data-fp-signature="<%= signature %>" data-fp-apikey="<%= $filepicker.api_key %>" type="filepicker-dragdrop" data-fp-multiple="true" data-fp-services="COMPUTER,GOOGLE_DRIVE,DROPBOX,BOX,SKYDRIVE,PICASA,FLICKR,URL,GITHUB,GMAIL,ALFRESCO,FTP,WEBDAV" data-fp-drag-class="col-xs-12 printatnd-dragdrop" data-fp-extensions="<%= ALL_EXTENSIONS.join(",") %>" data-fp-maxSize="10485760" data-fp-button-class="btn btn-primary btn-block btn-lg"/>
   </div>
   <div class="col-sm-1 col-lg-1"><br><span class="hidden-xs divider">&raquo;<br><br></span></div>
   <div class="col-sm-3 col-lg-3" id="print-options">
