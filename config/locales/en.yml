@@ -10,8 +10,9 @@ en:
                 collate: "Collated?"
                 copies: "Number Of Copies:"
                 double_sided: "Double-sided?"
-    meta_description: "Print@CU is a service that allows Columbia University students to print to any printer on campus."
+    meta_description: "Print@ND is a service that allows University of Notre Dame students to print to any printer on campus."
     something_bad_happened: "Something Bad Happened"
+    title: "Print@ND"
     success:
         html:
             one:
